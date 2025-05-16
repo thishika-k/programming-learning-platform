@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ E-learning Platform</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<header>
+    <h1>C++ E-learning Platform</h1>
+    <p>Learn C++ with interactive examples!</p>
+</header>
+
+<section id="intro">
+    <h2>Introduction</h2>
+    <div class="content">
+        <p>C++ is a general-purpose programming language that allows for efficient low-level memory manipulation, object-oriented design, and more. In this platform, we will cover key C++ concepts with examples.</p>
+    </div>
+</section>
+
+<section id="syntax">
+    <h2>Syntax</h2>
+    <div class="content">
+        <p>The syntax of a C++ program typically includes a `main` function, header files, and statements written with semicolons.</p>
+        <div class="code-box">
+            <pre>
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout &lt;&lt; "Hello, C++!" &lt;&lt; endl;
+    return 0;
+}
+            </pre>
+        </div>
+        <button class="button" onclick="showOutput('Hello, C++!')">Run</button>
+        <div id="output" class="output-box"></div>
+    </div>
+</section>
+
+<section id="input-output">
+    <h2>Input and Output</h2>
+    <div class="content">
+        <p>In C++, we can take input using `cin` and print output using `cout`.</p>
+        <div class="code-box">
+            <pre>
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num;
+    cout &lt;&lt; "Enter a number: ";
+    cin &gt;&gt; num;
+    cout &lt;&lt; "You entered: " &lt;&lt; num &lt;&lt; endl;
+    return 0;
+}
+            </pre>
+        </div>
+        <input type="number" id="numInput" placeholder="Enter a number" />
+        <button class="button" onclick="handleInputOutput()">Submit</button>
+        <div id="input-output-result" class="output-box"></div>
+    </div>
+</section>
+
+<section id="variables">
+    <h2>Variables and Constants</h2>
+    <div class="content">
+        <p>Variables store data and constants are values that cannot be changed after initialization.</p>
+        <div class="code-box">
+            <pre>
+#include <iostream>
+using namespace std;
+
+int main() {
+    const int MAX = 100;
+    int var = 10;
+    cout &lt;&lt; "Variable: " &lt;&lt; var &lt;&lt; ", Constant: " &lt;&lt; MAX &lt;&lt; endl;
+    return 0;
+}
+            </pre>
+        </div>
+        <button class="button" onclick="showOutput('Variable: 10,Constant: 100')">Run</button>
+        <div id="output" class="output-box"></div>
+    </div>
+</section>
+
+<section id="datatypes">
+    <h2>Data Types and Literals</h2>
+    <div class="content">
+        <p>C++ supports various data types like `int`, `float`, `char`, etc. Literals represent fixed values like `5`, `3.14`, etc.</p>
+        <div class="code-box">
+            <pre>
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a = 5;
+    float b = 3.14;
+    char c = 'A';
+    cout &lt;&lt; "Integer: " &lt;&lt; a &lt;&lt; ", Float: " &lt;&lt; b &lt;&lt; ", Char: " &lt;&lt; c &lt;&lt; endl;
+    return 0;
+}
+            </pre>
+        </div>
+        <button class="button" onclick="showOutput('Integer: 5, Float: 3.14, Char: A')">Run</button>
+        <div id="output" class="output-box"></div>
+    </div>
+</section>
+
+<section id="operators">
+    <h2>Operators</h2>
+    <div class="content">
+        <p>C++ includes arithmetic operators, comparison operators, logical operators, etc.</p>
+        <div class="code-box">
+            <pre>
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a = 5, b = 3;
+    cout &lt;&lt; "Sum: " &lt;&lt; a + b &lt;&lt; endl;
+    cout &lt;&lt; "Product: " &lt;&lt; a * b &lt;&lt; endl;
+    return 0;
+}
+            </pre>
+        </div>
+        <button class="button" onclick="showOutput('Sum: 8, Product: 15')">Run</button>
+        <div id="output" class="output-box"></div>
+    </div>
+</section>
+
+<section id="strings">
+    <h2>Strings</h2>
+    <div class="content">
+        <p>Strings are sequences of characters in C++. They can be manipulated using various functions.</p>
+        <div class="code-box">
+            <pre>
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string str = "Hello, C++!";
+    cout &lt;&lt; "String: " &lt;&lt; str &lt;&lt; endl;
+    return 0;
+}
+            </pre>
+        </div>
+        <button class="button" onclick="showOutput('String: Hello, C++!')">Run</button>
+        <div id="output" class="output-box"></div>
+    </div>
+</section>
+
+<section id="functions">
+    <h2>Functions</h2>
+    <div class="content">
+        <p>Functions in C++ are blocks of code designed to perform specific tasks.</p>
+        <div class="code-box">
+            <pre>
+#include <iostream>
+using namespace std;
+
+void greet() {
+    cout &lt;&lt; "Hello from the function!" &lt;&lt; endl;
+}
+
+int main() {
+    greet();
+    return 0;
+}
+            </pre>
+        </div>
+        <button class="button" onclick="showOutput('Hello from the function!')">Run</button>
+        <div id="output" class="output-box"></div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 C++ E-learning Platform </p>
+</footer>
+
+<script>
+    function showOutput(outputText) {
+        document.getElementById("output").innerHTML = outputText;
+    }
+
+    function handleInputOutput() {
+        var num = document.getElementById("numInput").value;
+        if (num) {
+            document.getElementById("input-output-result").innerHTML = "You entered: " + num;
+        } else {
+            document.getElementById("input-output-result").innerHTML = "Please enter a valid number!";
+        }
+    }
+</script>
+
+</body>
+</html>

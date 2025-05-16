@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C Language Tutorial - Scriptnex</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+    
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <a href="#">Home</a>
+        <a href="#syntax">Syntax</a>
+        <a href="#examples">Examples</a>
+        <a href="#functions">Functions</a>
+        <a href="#contact">Contact</a>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <a href="#intro">Introduction</a>
+        <a href="#syntax">Syntax</a>
+        <a href="#control-structures">Control Structures</a>
+        <a href="#arrays">Arrays</a>
+        <a href="#pointers">Pointers</a>
+        <a href="#file-handling">File Handling</a>
+        <a href="#real-life">Real-Life Use Cases</a>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Introduction Section -->
+        <section id="intro" class="card">
+            <h3>Introduction to C</h3>
+            <p>C is a versatile programming language commonly used in operating systems, embedded systems, and other performance-critical applications.</p>
+        </section>
+
+        <!-- Syntax Section -->
+        <section id="syntax" class="card">
+            <h3>Basic Syntax</h3>
+            <p>A C program begins with a main function. Example:</p>
+            <pre>
+#include <stdio.h>
+
+int main() {
+    printf("Welcome to C Programming!");
+    return 0;
+}
+
+output : Welcome to C Programming!
+            </pre>
+        </section>
+
+        <!-- Control Structures -->
+        <section id="control-structures" class="card">
+            <h3>Control Structures</h3>
+            <p>Control structures allow decision-making and repetition:</p>
+            <h4>Example: Check if a number is positive or negative</h4>
+            <pre>
+#include <stdio.h>
+
+int main() {
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    if (num > 0) {
+        printf("Positive number.");
+    } else {
+        printf("Negative number.");
+    }
+    return 0;
+}
+input1   : 20
+output1  : Positive number
+input2   : -75
+output2  : Negative number
+            </pre>
+        </section>
+
+        <!-- Arrays -->
+        <section id="arrays" class="card">
+            <h3>Arrays</h3>
+            <p>Arrays store multiple values of the same data type.</p>
+            <h4>Example: Calculate the average of numbers</h4>
+            <pre>
+#include <stdio.h>
+
+int main() {
+    int numbers[5] = {10, 20, 30, 40, 50};
+    int sum = 0;
+
+    for (int i = 0; i < 5; i++) {
+        sum += numbers[i];
+    }
+
+    printf("Average: %d", sum / 5);
+    return 0;
+}
+
+output : 30
+            </pre>
+        </section>
+
+        <!-- Pointers -->
+        <section id="pointers" class="card">
+            <h3>Pointers</h3>
+            <p>Pointers store the memory address of another variable.</p>
+            <h4>Example: Swap two numbers using pointers</h4>
+            <pre>
+#include <stdio.h>
+
+void swap(int *x, int *y) {
+    int temp = *x;
+    *x = *y;
+    *y = temp;
+}
+
+int main() {
+    int a = 5, b = 10;
+
+    printf("Before swapping: a = %d, b = %d\n", a, b);
+    swap(&a, &b);
+    printf("After swapping: a = %d, b = %d", a, b);
+    return 0;
+}
+            </pre>
+        </section>
+
+        <!-- File Handling -->
+        <section id="file-handling" class="card">
+            <h3>File Handling</h3>
+            <p>File handling enables reading from and writing to files.</p>
+            <h4>Example: Write user input to a file</h4>
+            <pre>
+#include <stdio.h>
+
+int main() {
+    FILE *file = fopen("output.txt", "w");
+    char name[50];
+
+    printf("Enter your content: ");
+    scanf("%s", content);
+
+    fprintf(file, "Content: %s\n", content);
+    fclose(file);
+
+    printf("Data written to file successfully.");
+    return 0;
+}
+
+output :  
+            </pre>
+            <button class="button" onclick="showOutput('This is C programming')">Run</button>
+            <div id="output" class="output-box"></div>
+        </section>
+
+        <!-- Real-Life Use Cases -->
+        <section id="real-life" class="card">
+            <h3>Real-Life Applications of C</h3>
+            <p>Here are some examples of C in real-world scenarios:</p>
+            <ul>
+                <li>Developing operating systems like Linux and Windows.</li>
+                <li>Creating embedded software for devices like microwaves or cars.</li>
+                <li>Building database systems like MySQL.</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Scriptnex. All rights reserved.</p>
+    </footer>
+</body>
+</html>
